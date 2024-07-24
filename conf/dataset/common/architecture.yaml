@@ -1,0 +1,36 @@
+architecture_name: "Graph Texture Network"
+
+additional_augmentation: true
+layers: 5 # Total Layers (max:5)
+
+convnext_nano:
+  depth_dims : [80, 80, 160, 320, 640]
+  spatial_dims : [56, 56, 28, 14, 7]
+  depth_compression_ratio: 4
+  embedding_dim : 320
+  backbone_name : convnext_nano
+  fine_tune_backbone: false
+
+convnext_tiny:
+  depth_dims : [96, 96, 192, 384, 768]
+  spatial_dims : [56, 56, 28, 14, 7]
+  depth_compression_ratio: 4
+  embedding_dim : 384 #384
+  backbone_name : convnext_tiny
+  fine_tune_backbone: false
+
+convnext_base:
+  depth_dims : [128, 128, 256, 512, 1024]
+  spatial_dims : [56, 56, 28, 14, 7]
+  depth_compression_ratio: 4
+  embedding_dim : 512
+  backbone_name : convnext_base
+  fine_tune_backbone: false
+
+convnext_large:
+  depth_dims : [192, 192, 384, 768, 1536]
+  spatial_dims : [56, 56, 28, 14, 7]
+  depth_compression_ratio: 4
+  embedding_dim : 768
+  backbone_name : convnext_large
+  fine_tune_backbone: false

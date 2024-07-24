@@ -1,0 +1,32 @@
+# Python specific
+__pycache__/
+
+# Virtual environment
+venv/
+env/
+
+# mlflow, logs and snapshots
+mlruns/
+log/
+multirun/
+outputs/
+snapshot/
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.pyd
+
+# mlflow database
+*.db
+
+# IDE files
+.vscode/
+.idea/
+*.pycharm
+
+# snapshots
+*.tar
+
+# Jupyter Notebooks
+.ipynb_checkpoints/

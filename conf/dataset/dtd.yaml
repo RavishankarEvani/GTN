@@ -1,0 +1,42 @@
+defaults:
+  - _self_
+  - common:
+    - architecture
+ 
+experiment: dtd
+ 
+optimizer:
+  lr: 1e-4
+  weight_decay: 5e-1
+ 
+loss:
+  alpha: 1
+  gamma: 2
+ 
+scheduler:
+  eta_min_scaling_factor: 0
+  
+training:
+  seed: 0
+  batch_size: 32
+  start_epoch: 1
+  num_epochs: 300
+  split: '1'
+ 
+testing:
+  batch_size: 32
+ 
+accelerator:
+  cuda: true
+  device: '0'
+  resume: false
+ 
+backbone: convnext_tiny
+
+paths:
+  data: ../dataset/texture_material/
+  log: ./log/
+  snapshot: ./snapshot/
+
+tracking:
+  uri: 'http://10.0.0.1:5000'
