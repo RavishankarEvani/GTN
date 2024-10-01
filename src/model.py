@@ -436,7 +436,7 @@ class GTN(nn.Module):
             # Message Passing and Aggregation
             gl_module = GTNMessageAgg(num_node=num_node, 
                                         node_dim=node_dim, 
-                                        aggr='mean') #aggr='mean' => rho = 1/N(i)U(i). aggr='sum' => rho = 1
+                                        aggr='mean') # aggr='mean' => rho = 1/N(i)U(i). aggr='sum' => rho = 1
 
             self.cgn_list.append(cgn_module)
             self.gl_list.append(gl_module)
@@ -490,6 +490,7 @@ class GTN(nn.Module):
 
         # Output from classification layer
         out = self.classifier(x)
+        # Useful for our specific use case but generally not necessary and can be commented out
         out = nn.functional.softmax(out, dim=1)
 
         return out, vertex_list, og_list
