@@ -1,8 +1,13 @@
 <h1 align="center" style="color: blue;">
-    Multiscale Graph Texture Network (GTN)<br>
-    The paper will be released soon (it has been accepted at a conference)
+    [ECCV 2024] Multiscale Graph Texture Network (GTN)
 </h1>
 
+<div align="center">
+  <a href="https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/04702.pdf" target='_blank'><img alt="GTNPaper" src="https://img.shields.io/badge/GTN-Paper-red.svg"></a>
+  <a href="https://eccv.ecva.net/media/PosterPDFs/ECCV%202024/320.png" target='_blank'><img alt="GTNPoster" src="https://img.shields.io/badge/GTN-Poster-green.svg"></a>
+</div>
+
+<br> <!-- To add a line break and vertical space -->
 
 <div align="center">
   <a href="https://pytorch.org/get-started/locally/"><img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-ee4c2c?logo=pytorch&logoColor=white"></a>
@@ -27,10 +32,13 @@
 - [:pray: Acknowledgement](#pray-acknowledgement)
 
 ## :bulb: GTN Concept
-Illustration of basic idea of GTN which encodes feature maps associated with a texture image from DTD dataset as a graph, where vertices represent various latent
-texture attributes. Information exchange among these related latent texture attributes leads to the formation of a probability distribution over visual texture attributes.
+Illustration of basic idea of GTN which encodes feature maps associated with a texture image from DTD dataset as a graph, where vertices represent various latent texture attributes. Information exchange among these related latent texture attributes leads to the formation of a probability distribution over visual texture attributes.
 
-![Project Screenshot](./assets/GTN_Concept.jpg)
+![Project Screenshot](./assets/GTN_Concept_1.jpg)
+
+Illustration of how texture information is represented as latent texture attributes, enhanced through message passing and aggregation, and finally subjected to orderless aggregation and multiscale interaction.
+
+![Project Screenshot](./assets/GTN_Concept_2.png)
 
 ## :classical_building: GTN Architecture
 
@@ -63,6 +71,7 @@ GTN/
 │   └── utils.py
 ├── .gitignore
 ├── main.py
+├── config.py
 └── README.md
 dataset/
 └── texture_material/
@@ -81,11 +90,10 @@ dataset/
             ├── test1.txt
             └── ...
 ```
-
-##### Create a `dataset` subfolder inside the `pytorch-material-classification` directory:
+##### Create the `dataset/` folder in the parent directory of the current `GTN/` folder, so that `dataset/` and `GTN/` are at the same directory level:
 
 ```bash
-mkdir -p ../pytorch-material-classification/dataset/
+mkdir -p ../dataset/texture_material
 ```
 
 ##### [Optional] Create the following directories in the project root directory to store logs and snapshots:
